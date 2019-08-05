@@ -13,7 +13,7 @@ class ProfilesController extends Controller
     {
         $user = \App\User::findOrFail($user);
 
-        return view('home', [
+        return view('profiles.index', [
             'user' => $user,
         ]);
     }

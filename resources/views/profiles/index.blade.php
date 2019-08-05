@@ -9,7 +9,7 @@
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1>{{ $user->username }}</h1>
-                <a href="#">Add New Post</a>
+                <a href="/p/create">Add New Post</a>
             </div>
             <div class="d-flex">
                 <div class="pr-4"><strong>5</strong> tanjira</div>
@@ -23,15 +23,11 @@
     </div>
 
     <div class="row pt-5">
+        @foreach($user->posts as $post)
         <div class="col-4">
-            <img src="https://www.venturists.net/wp-content/uploads/2016/08/white-bean-soup-1.jpg" class="w-100">
+            <img src="/storage/{{ $post->image }}" class="w-100">
         </div>
-        <div class="col-4">
-            <img src="https://coolinarika.azureedge.net/images/_variations/8/f/8f33087bf0f882c91a7b6635fe51c165_view_l.jpg?v=13" class="w-100">
-        </div>
-        <div class="col-4">
-            <img src="https://coolinarika.azureedge.net/images/_variations/b/4/b40b37e7c6b77b292847629d67340462_view_l.jpg?v=2" class="w-100">
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection
