@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
 {
+    // disabling mass assignment
+    protected $guarded = [];
+
     /**
      * Fetching user class to profile.
      */
