@@ -38,6 +38,23 @@ class User extends Authenticatable
     ];
 
     /**
+     * Called when loaded up model.
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        // on user creation
+        static::created(function ($user) {
+            $user->profile()->create([
+                'title' => $user->username
+            ]);
+        });
+
+
+    }
+
+    /**
      * Relation between single user and multiple posts.
      */
     public function posts()
