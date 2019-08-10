@@ -31,7 +31,7 @@ class ProfilesController extends Controller
     public function update(User $user)
     {
         $data = request()->validate([
-            'title' => 'required', 
+            'title' => 'required',
             'description' => 'required',
             'url' => 'url',
             'image' => '',
