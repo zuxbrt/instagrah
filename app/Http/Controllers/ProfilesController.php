@@ -21,6 +21,9 @@ class ProfilesController extends Controller
      */
     public function edit(User $user)
     {
+        // authorize update only for logged in user
+        $this->authorize('update', $user->profile);
+
         return view('profiles.edit', compact('user'));
     }
 
@@ -37,7 +40,8 @@ class ProfilesController extends Controller
             'image' => '',
         ]);
 
-        $user->profile->update($data);
+        // block unauthorized users
+        auth()->user()->profile->update($data);
 
         return redirect("/profile/{$user->id}");
     }
