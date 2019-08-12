@@ -19,6 +19,14 @@ class Profile extends Model
     }
 
     /**
+     * Profile followers.
+     */
+    public function followers()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    /**
      * Fetching user class to profile.
      */
     public function user(){

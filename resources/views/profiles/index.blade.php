@@ -14,7 +14,7 @@
             <div class="d-flex align-items-center pb-3">
                 <div class="h4">{{ $user->username }}</div>
 
-                <follow-button></follow-button>
+                <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
             </div>
                 
 
@@ -30,8 +30,8 @@
             
             <div class="d-flex">
                 <div class="pr-4"><strong>{{ $user->posts->count() }}</strong> tanjira</div>
-                <div class="pr-4"><strong>2</strong> pratitelja</div>
-                <div class="pr-4"><strong>5</strong> prati</div>
+                <div class="pr-4"><strong>{{ $user->profile->followers->count() }}</strong> pratitelja</div>
+                <div class="pr-4"><strong>{{ $user->following->count() }}</strong> prati</div>
             </div>
             <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
             <div>{{ $user->profile->description }}</div>

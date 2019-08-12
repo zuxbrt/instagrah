@@ -63,6 +63,14 @@ class User extends Authenticatable
     }
 
     /**
+     * Relation between following profiles.
+     */
+    public function following()
+    {
+        return $this->belongsToMany(Profile::class);
+    }
+
+    /**
      * Relation between user and its profile.
      */
     public function profile()

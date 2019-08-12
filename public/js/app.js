@@ -1833,10 +1833,47 @@ module.exports = {
 /*!***********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FollowButton.vue?vue&type=script&lang=js& ***!
   \***********************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\zux\\Desktop\\instagrah\\resources\\js\\components\\FollowButton.vue: Unterminated string constant (15:18)\n\n\u001b[0m \u001b[90m 13 | \u001b[39m    methods\u001b[33m:\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m        followUser() {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 | \u001b[39m            alert(\u001b[32m'inside);\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 | \u001b[39m        }\u001b[0m\n\u001b[0m \u001b[90m 17 | \u001b[39m    }\u001b[0m\n\u001b[0m \u001b[90m 18 | \u001b[39m}\u001b[0m\n    at Parser.raise (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:6325:17)\n    at Parser.readString (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:7275:14)\n    at Parser.getTokenFromCode (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:6954:14)\n    at Parser.nextToken (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:6525:12)\n    at Parser.next (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:6465:10)\n    at Parser.parseSubscript (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8509:12)\n    at Parser.parseSubscripts (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8433:19)\n    at Parser.parseExprSubscripts (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8422:17)\n    at Parser.parseMaybeUnary (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8392:21)\n    at Parser.parseExprOps (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8267:23)\n    at Parser.parseMaybeConditional (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8240:23)\n    at Parser.parseMaybeAssign (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8187:21)\n    at Parser.parseExpression (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8135:23)\n    at Parser.parseStatementContent (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9958:23)\n    at Parser.parseStatement (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9829:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:10405:25)\n    at Parser.parseBlockBody (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:10392:10)\n    at Parser.parseBlock (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:10376:10)\n    at Parser.parseFunctionBody (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9424:24)\n    at Parser.parseFunctionBodyAndFinish (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9394:10)\n    at Parser.parseMethod (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9348:10)\n    at Parser.parseObjectMethod (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9264:19)\n    at Parser.parseObjPropValue (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9306:23)\n    at Parser.parseObjectMember (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9230:10)\n    at Parser.parseObj (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9154:25)\n    at Parser.parseExprAtom (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8784:28)\n    at Parser.parseExprSubscripts (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8412:23)\n    at Parser.parseMaybeUnary (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8392:21)\n    at Parser.parseExprOps (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8267:23)\n    at Parser.parseMaybeConditional (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8240:23)\n    at Parser.parseMaybeAssign (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8187:21)\n    at Parser.parseObjectProperty (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9281:101)\n    at Parser.parseObjPropValue (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9306:101)\n    at Parser.parseObjectMember (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9230:10)\n    at Parser.parseObj (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:9154:25)\n    at Parser.parseExprAtom (C:\\Users\\zux\\Desktop\\instagrah\\node_modules\\@babel\\parser\\lib\\index.js:8784:28)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['userId', 'follows'],
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  },
+  data: function data() {
+    return {
+      status: this.follows
+    };
+  },
+  methods: {
+    followUser: function followUser() {
+      var _this = this;
+
+      axios.post('/follow/' + this.userId).then(function (response) {
+        _this.status = !_this.status; //console.log(response.data);
+      })["catch"](function (errors) {
+        // if not logged in and trying to follow, redirect to login
+        if (errors.response.status == 401) {
+          window.location = '/login';
+        }
+      });
+    }
+  },
+  computed: {
+    buttonText: function buttonText() {
+      return this.status ? "Unfollow" : "Follow";
+    }
+  }
+});
 
 /***/ }),
 
@@ -37137,7 +37174,11 @@ var render = function() {
   return _c("div", [
     _c(
       "button",
-      { staticClass: "btn btn-primary ml-4", on: { click: _vm.followUser } },
+      {
+        staticClass: "btn btn-primary ml-4",
+        domProps: { textContent: _vm._s(_vm.buttonText) },
+        on: { click: _vm.followUser }
+      },
       [_vm._v("Follow")]
     )
   ])
@@ -49385,15 +49426,14 @@ if (token) {
 /*!**************************************************!*\
   !*** ./resources/js/components/FollowButton.vue ***!
   \**************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FollowButton_vue_vue_type_template_id_426ba0ae___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FollowButton.vue?vue&type=template&id=426ba0ae& */ "./resources/js/components/FollowButton.vue?vue&type=template&id=426ba0ae&");
 /* harmony import */ var _FollowButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FollowButton.vue?vue&type=script&lang=js& */ "./resources/js/components/FollowButton.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _FollowButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _FollowButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -49423,15 +49463,13 @@ component.options.__file = "resources/js/components/FollowButton.vue"
 /*!***************************************************************************!*\
   !*** ./resources/js/components/FollowButton.vue?vue&type=script&lang=js& ***!
   \***************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FollowButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./FollowButton.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FollowButton.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FollowButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FollowButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FollowButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FollowButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FollowButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FollowButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
