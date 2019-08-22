@@ -31,27 +31,27 @@
             <div class="d-flex pt-4">
 
                 <div class="pr-4">
-                    @if (count($user->posts) === 1)
-                        <strong>{{ $user->posts->count() }} </strong>Post
-                    @elseif (count($user->posts) > 1)
-                        <strong>{{ $user->posts->count() }} </strong>Posts
+                    @if ($postsCount === 1)
+                        <strong>{{ $postsCount }} </strong>Post
+                    @elseif ($postsCount > 1)
+                        <strong>{{ $postsCount }} </strong>Posts
                     @else
                         <strong>0</strong> Posts
                     @endif
                 </div>
 
                 <div class="pr-4">
-                    @if (count($user->profile->followers) === 1)
-                        <strong>{{ $user->profile->followers->count() }} </strong>Follower
-                    @elseif (count($user->profile->followers) > 1)
-                        <strong>{{ $user->profile->followers->count() }} </strong>Followers
+                    @if ($followersCount === 1)
+                        <strong>{{ $followersCount }} </strong>Follower
+                    @elseif ($followersCount > 1)
+                        <strong>{{ $followersCount }} </strong>Followers
                     @else
                         <strong>0 </strong>Followers
                     @endif
                 </div>
 
                 <div class="pr-4">
-                    <strong>{{ $user->following->count() }}</strong> Following
+                    <strong>{{ $followingCount }}</strong> Following
                 </div>
 
             </div>
