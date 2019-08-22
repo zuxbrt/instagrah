@@ -14,8 +14,8 @@ class Profile extends Model
      */
     public function profileImage()
     {
-        $imagePath = ($this->image) ? $this->image : 'profile/1pgQC9QSzzXGcm17PBkp1CXLMJNVPZYvENDULk8H.png';
-        return '/storage/' . $imagePath;
+        $imagePath = ($this->image) ? '/storage/'.$this->image : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPoiOPl_l2kX5BZsLACATzipLjD92P6m7t7ZmZzwJ-g_47dIGF';
+        return $imagePath;
     }
 
     /**

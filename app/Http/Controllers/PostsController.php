@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use App\Post;
+use App\Profile;
 
 class PostsController extends Controller
 {
@@ -18,14 +19,20 @@ class PostsController extends Controller
     }
 
     /**
-     * Display all posts.
+     * Display all posts and users to follow.
      */
     public function index()
     {
+        $allProfiles = Profile::all();
+
+        // filter current logged profile
+        $profiles = $allProfiles->reject(function ($profile, $key) {
+            return auth()->User()->id == $profile->user_id;
+        });
+
         $users = auth()->user()->following()->pluck('profiles.user_id');
         $posts = Post::whereIn('user_id', $users)->latest()->get();
-
-        return view('posts.index', compact('posts'));
+        return view('posts.index', compact('posts', 'profiles'));
     }
 
     /**
@@ -64,11 +71,25 @@ class PostsController extends Controller
         return redirect('/profile/'. auth()->user()->id);
     }
 
+    /**
+     * Delete post.
+     */
+    public function destroy(Post $post)
+    {
+        if($post->user_id !== auth()->User()->id){
+            abort(403);
+        } else {
+            $post->delete();
+            return redirect('/profile/'.auth()->User()->id);
+        }
+        
+    }
+
 
     /**
      * Return view for show single post.
      */
-    public function show(\App\Post $post)
+    public function show(Post $post)
     {
         return view('posts.show', compact('post'));
     }

@@ -15,7 +15,6 @@ class ProfilesController extends Controller
     {
         // return state if the user is already following current profile.
         $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
-
         return view('profiles.index', compact('user', 'follows'));
     }
 
@@ -27,7 +26,6 @@ class ProfilesController extends Controller
     {
         // authorization
         $this->authorize('update', $user->profile);
-
         return view('profiles.edit', compact('user'));
     }
 
@@ -43,17 +41,20 @@ class ProfilesController extends Controller
         $data = request()->validate([
             'title' => 'required',
             'description' => 'required',
-            'url' => 'url',
+            'url' => '',
             'image' => '',
         ]);
+
+        // if url is entered
+        if(request('url') !== null){
+            $data['url'] = request('url');
+        }
 
         // in case a new image is added, save it
         if (request('image')) {
             $imagePath = request('image')->store('profile', 'public');
-
             $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
             $image->save();
-
             $imageArray = ['image' => $imagePath];
         }
 
