@@ -31,7 +31,7 @@ class PostsController extends Controller
         });
 
         $users = auth()->user()->following()->pluck('profiles.user_id');
-        $posts = Post::whereIn('user_id', $users)->latest()->get();
+        $posts = Post::whereIn('user_id', $users)->latest()->paginate(5);
         return view('posts.index', compact('posts', 'profiles'));
     }
 
@@ -53,6 +53,9 @@ class PostsController extends Controller
             'caption' => 'required',
             'image' => ['required','image'],
         ]);
+
+        error_reporting(E_ALL);
+        ini_set("display_errors", 1);
 
         // upload image
         $imagePath = request('image')->store('uploads', 'public');

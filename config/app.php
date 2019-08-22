@@ -125,6 +125,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Memory limit
+    |--------------------------------------------------------------------------
+    |
+    | This value sets the maximum amount of memory in bytes that a script is
+    | allowed to allocate. This helps prevent poorly written scripts for
+    | eating up all available memory on a server.
+    |
+    */
+    
+    ini_set('memory_limit', '256M'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
     |
