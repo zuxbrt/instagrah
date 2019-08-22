@@ -67,11 +67,11 @@
         </div>
 
         @endforeach
+            
+        </div>
 
         <div class="row">
-            <div class="col-12">
-                {{ $posts->links()}}
-            </div>
+            <div class="div" style="position: relative; margin-left:auto; margin-right:auto;">{{ $posts->links() }}</div>
         </div>
 
     @endif
