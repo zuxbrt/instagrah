@@ -46,19 +46,21 @@
                     </span> {{ $post->caption }}
                 </p>
 
-                    @foreach($post->comments as $comment)
-                    
-                    <div class="d-flex flex-row m-1">
-                        <a href="/profile/{{ $comment->user_id }}">
-                            <img src="{{ $comment->userImage($comment->user_id) }}" class="rounded-circle w-100 h-100" style="max-width: 40px;">
-                        </a>
-                        <div class="d-flex pt-2 pl-2 w-100">
-                            <span class="text-dark font-weight-bold ">{{ $comment->comment }}</span>
-                            <span class="text-dark-small" style="margin-left: auto;">{{ $comment->formatDate($comment->created_at)}}</span>
+                    @if($post->comments)
+                        @foreach($post->comments as $comment)
+                        
+                        <div class="d-flex flex-row m-1">
+                            <a href="/profile/{{ $comment->user_id }}">
+                                <img src="{{ $comment->userImage($comment->user_id) }}" class="rounded-circle w-100 h-100" style="max-width: 40px;">
+                            </a>
+                            <div class="d-flex pt-2 pl-2 w-100">
+                                <span class="text-dark font-weight-bold ">{{ $comment->comment }}</span>
+                                <span class="text-dark-small" style="margin-left: auto;">{{ $comment->formatDate($comment->created_at)}}</span>
+                            </div>
                         </div>
-                    </div>
 
-                    @endforeach
+                        @endforeach
+                    @endif
 
 
                     <form action="{{ route('comment.post', [ 'post' => $post ]) }}" enctype="multipart/form-data" method="post">
@@ -66,7 +68,7 @@
 
                         <div class="d-flex flex-row ml-1">
 
-                            <img src="{{ $comment->userImage(auth()->user()->id) }}" class="rounded-circle w-100 h-100" style="max-width: 40px;">
+                            <img src="{{ auth()->user()->profile->profileImage() }}" class="rounded-circle w-100 h-100" style="max-width: 40px;">
 
                             <input id="comment" 
                                 type="text" 

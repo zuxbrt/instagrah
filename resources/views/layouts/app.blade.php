@@ -46,9 +46,9 @@
                     <ul class="navbar-nav mr-auto">
                         @guest
                         @else
-                        <li class="nav-item">
-                            <a href="{{route('search')}}">
-                                <img src="/svg/search.svg" style="height: 30px;" class="pr-2">
+                        <li class="nav-item mt-1 ml-2">
+                            <a href="{{route('feed')}}">
+                                <span class="text-dark">Feed</span>
                             </a>
                         </li>
                         @endif
@@ -69,7 +69,10 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->username }} <span class="caret"></span>
+                                    <img src="{{Auth::user()->profile->profileImage() }}" 
+                                    class="rounded-circle"
+                                    style="width:30px; height: auto;"> 
+                                    <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
