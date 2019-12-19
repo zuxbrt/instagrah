@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use App\Post;
 use App\Profile;
+use App\PostComment;
 use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
@@ -96,6 +97,23 @@ class PostsController extends Controller
     {
         $follows = (auth()->user()) ? auth()->user()->following->contains($post->user->id) : false;
         return view('posts.show', compact('post', 'follows'));
+    }
+
+
+    public function comment(Post $post)
+    {
+        // form request data
+        $data = request()->validate([
+            'comment' => 'required',
+        ]);
+
+        $comment = new PostComment();
+        $comment->comment = request('comment');
+        $comment->user_id = auth()->user()->id;
+        $comment->post_id = $post->id;
+        $comment->save();
+
+        return redirect()->back();
     }
 
 }

@@ -15,4 +15,12 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Relation between single post and comments.
+     */
+    public function comments()
+    {
+        return $this->hasMany(PostComment::class)->orderBy('created_at', 'ASC');
+    }
 }
