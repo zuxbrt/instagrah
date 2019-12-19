@@ -15,9 +15,11 @@
                             <a href="/profile/{{ $post->user->id }}">
                                 <span class="text-dark">{{ $post->user->username }}</span>
                             </a>
+                            
                             @if(auth()->user()->id !== $post->user->id)
-                                <a href="#" class="pl-3">Follow</a>
+                                <follow-button user-id="{{ $post->user->id }}" follows="{{ $follows }}"></follow-button>
                             @endif
+
                         </div>
                     </div>
                     <div>

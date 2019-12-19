@@ -37,9 +37,9 @@
 
 
     @if(auth()->user()->following()->count() < 1)
-        <p class="text-center">No posts to show. Follow some users.</p>
+        <p class="text-center">Your feed is empty.</p>
     @elseif($posts->count() < 1)
-        No posts to show.
+        Follow more users to get more posts in your feed.
     @else
 
         @foreach($posts as $post)

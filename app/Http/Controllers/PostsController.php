@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use App\Post;
 use App\Profile;
+use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
 {
@@ -25,9 +26,9 @@ class PostsController extends Controller
     {
         $allProfiles = Profile::all();
 
-        // filter current logged profile
+        //filter current logged profile
         $profiles = $allProfiles->reject(function ($profile, $key) {
-            return auth()->User()->id == $profile->user_id;
+           return auth()->User()->id == $profile->user_id;
         });
 
         $users = auth()->user()->following()->pluck('profiles.user_id');
@@ -46,7 +47,7 @@ class PostsController extends Controller
     /**
      * Handle creating post to currently logged in user.
      */
-    public function store()
+    public function store(Request $request)
     {
         // form request data
         $data = request()->validate([
@@ -54,20 +55,19 @@ class PostsController extends Controller
             'image' => ['required','image'],
         ]);
 
-        error_reporting(E_ALL);
-        ini_set("display_errors", 1);
+        $fileName = '';
 
-        // upload image
-        $imagePath = request('image')->store('uploads', 'public');
-
-        // fit its size
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
-        $image->save();
+        if ($request->hasFile('image')) {
+            $imagePath = request('image')->store('posts/'.auth()->user()->id, 'public');
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
+            $image->save();
+            $fileName = $imagePath;
+        }
 
         // create post
         auth()->user()->posts()->create([
             'caption' => $data['caption'],
-            'image' => $imagePath,
+            'image' => $fileName,
         ]);
 
         // redirect to user profile
@@ -94,7 +94,8 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        return view('posts.show', compact('post'));
+        $follows = (auth()->user()) ? auth()->user()->following->contains($post->user->id) : false;
+        return view('posts.show', compact('post', 'follows'));
     }
 
 }

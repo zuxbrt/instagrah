@@ -15,11 +15,8 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- material css -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -36,8 +33,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-0">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                    <div class="flex-row pt-4">
-                        <img src="/svg/potato.png" style="height: 30px;" class="pr-2">
+                    <div class="flex-row pt-2">
                         <p class="h5">Instagrah</p>
                     </div>
                 </a>
@@ -48,7 +44,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        @guest
+                        @else
+                        <li class="nav-item">
+                            <a href="{{route('search')}}">
+                                <img src="/svg/search.svg" style="height: 30px;" class="pr-2">
+                            </a>
+                        </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -94,4 +97,8 @@
     </div>
      
 </body>
+
+<!-- material js -->
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
 </html>

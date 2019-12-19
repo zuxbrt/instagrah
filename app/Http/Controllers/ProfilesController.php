@@ -66,7 +66,7 @@ class ProfilesController extends Controller
 
         $data = request()->validate([
             'title' => 'required',
-            'description' => 'required',
+            'description',
             'url' => '',
             'image' => '',
         ]);
@@ -78,7 +78,7 @@ class ProfilesController extends Controller
 
         // in case a new image is added, save it
         if (request('image')) {
-            $imagePath = request('image')->store('profile', 'public');
+            $imagePath = request('image')->store('profile/'.auth()->user()->id, 'public');
             $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
             $image->save();
             $imageArray = ['image' => $imagePath];
